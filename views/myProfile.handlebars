@@ -1,0 +1,229 @@
+{{#if toastMessage}}
+<p id="my_profile_toast">{{toastMessage}}</p>
+{{/if}}
+
+<div id="my_profile_container">
+    {{#if userData}}
+    <input value="{{userData.username}}" id="loggedInUser" hidden>
+    <input id="user_id_temp_storage" name="user_id_temp_storage" value="{{userData.id}}" style="display: none;">
+    <input id="icon_id_temp_storage" name="icon_id_temp_storage" style="display: none;">
+    <div id="my_profile_info">
+        <form id="updateInfo">
+            <div id="my_profile_icon">
+                <div class="my_profile_container">
+                    <img id="my-profile-icon-image" src="{{userData.icon_path}}" style="width: 200px;">
+                    <span id="update-icon-btn" class="collapse">
+                        <i class="fa-solid fa-circle-user"></i>
+                    </span>
+                </div>
+                <div id='icon_container'>
+                    <label for='icon' id='icon_container_label'>Choose your icon</label>
+                    <div id='icon_select_container'>
+                        <div class='icon_select'>
+                            <input type='radio' name='icon' id='icon_girl1' value='girl1'><label for='icon_girl1'>
+                                <img src='/images/avatars/girl1.png'>
+                            </label>
+                        </div>
+
+                        <div class='icon_select'>
+                            <input type='radio' name='icon' id='icon_girl2' value='girl2'><label for='icon_girl2'>
+                                <img src='/images/avatars/girl2.png'>
+                            </label>
+                        </div>
+
+                        <div class='icon_select'>
+                            <input type='radio' name='icon' id='icon_girl3' value='girl3'><label for='icon_girl3'>
+                                <img src='/images/avatars/girl3.png'>
+                            </label>
+                        </div>
+
+                        <div class='icon_select'>
+                            <input type='radio' name='icon' id='icon_girl4' value='girl4'><label for='icon_girl4'>
+                                <img src='/images/avatars/girl4.png'>
+                            </label>
+                        </div>
+
+                        <div class='icon_select'>
+                            <input type='radio' name='icon' id='icon_girl5' value='girl5'><label for='icon_girl5'>
+                                <img src='/images/avatars/girl5.png'>
+                            </label>
+                        </div>
+
+                        <div class='icon_select'>
+                            <input type='radio' name='icon' id='icon_girl6' value='girl6'><label for='icon_girl6'>
+                                <img src='/images/avatars/girl6.png'>
+                            </label>
+                        </div>
+
+                        <div class='icon_select'>
+                            <input type='radio' name='icon' id='icon_girl7' value='girl7'><label for='icon_girl7'>
+                                <img src='/images/avatars/girl7.png'>
+                            </label>
+                        </div>
+
+                        <div class='icon_select'>
+                            <input type='radio' name='icon' id='icon_girl8' value='girl8'><label for='icon_girl8'>
+                                <img src='/images/avatars/girl8.png'>
+                            </label>
+                        </div>
+
+                        <div class='icon_select'>
+                            <input type='radio' name='icon' id='icon_girl9' value='girl9'><label for='icon_girl9'>
+                                <img src='/images/avatars/girl9.png'>
+                            </label>
+                        </div>
+
+                        <div class='icon_select'>
+                            <input type='radio' name='icon' id='icon_girl10' value='girl10'><label for='icon_girl10'>
+                                <img src='/images/avatars/girl10.png'>
+                            </label>
+                        </div>
+
+                        <div class='icon_select'>
+                            <input type='radio' name='icon' id='icon_guy1' value='guy1'><label for='icon_guy1'>
+                                <img src='/images/avatars/guy1.png'>
+                            </label>
+                        </div>
+
+                        <div class='icon_select'>
+                            <input type='radio' name='icon' id='icon_guy2' value='guy2'><label for='icon_guy2'>
+                                <img src='/images/avatars/guy2.png'>
+                            </label>
+                        </div>
+
+                        <div class='icon_select'>
+                            <input type='radio' name='icon' id='icon_guy3' value='guy3'><label for='icon_guy3'>
+                                <img src='/images/avatars/guy3.png'>
+                            </label>
+                        </div>
+
+                        <div class='icon_select'>
+                            <input type='radio' name='icon' id='icon_guy4' value='guy4'><label for='icon_guy4'>
+                                <img src='/images/avatars/guy4.png'>
+                            </label>
+                        </div>
+
+                        <div class='icon_select'>
+                            <input type='radio' name='icon' id='icon_guy5' value='guy5'><label for='icon_guy5'>
+                                <img src='/images/avatars/guy5.png'>
+                            </label>
+                        </div>
+
+                        <div class='icon_select'>
+                            <input type='radio' name='icon' id='icon_guy6' value='guy6'><label for='icon_guy6'>
+                                <img src='/images/avatars/guy6.png'>
+                            </label>
+                        </div>
+
+                        <div class='icon_select'>
+                            <input type='radio' name='icon' id='icon_guy7' value='guy7'><label for='icon_guy7'>
+                                <img src='/images/avatars/guy7.png'>
+                            </label>
+                        </div>
+
+                        <div class='icon_select'>
+                            <input type='radio' name='icon' id='icon_guy8' value='guy8'><label for='icon_guy8'>
+                                <img src='/images/avatars/guy8.png'>
+                            </label>
+                        </div>
+
+                        <div class='icon_select'>
+                            <input type='radio' name='icon' id='icon_guy9' value='guy9'><label for='icon_guy9'>
+                                <img src='/images/avatars/guy9.png'>
+                            </label>
+                        </div>
+
+                        <div class='icon_select'>
+                            <input type='radio' name='icon' id='icon_guy10' value='guy10'><label for='icon_guy10'>
+                                <img src='/images/avatars/guy10.png'>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="update-container">
+                    <div>
+                        <label for="my_profile_fname">First Name:</label>
+                        <input id="my_profile_fname" name="my_profile_fname" type="text" value="{{userData.fname}}"
+                            required>
+                    </div>
+                    <div>
+                        <label for="my_profile_lname">Last Name:</label>
+                        <input id="my_profile_lname" name="my_profile_lname" type="text" value="{{userData.lname}}"
+                            required>
+                    </div>
+                    <div>
+                        <label for="my_profile_email">Email:</label>
+                        <input id="my_profile_email" name="my_profile_email" type="email" value="{{userData.email}}">
+                        <p id='email-format-error' style='color: red; display: none;'></p>
+                    </div>
+                    <div>
+                        <label for="my_profile_DOB">Date of birth:</label>
+                        <input id="my_profile_DOB" name="my_profile_DOB" type="date" value="{{userData.DOB}}" required>
+                    </div>
+                    <div>
+                        <label for="my_profile_desc">Description:</label>
+                        <input id="my_profile_desc" name="my_profile_desc" type="text" value="{{userData.description}}">
+                    </div>
+                </div>
+            </div>
+            <div class="my-profile-sub-btn-div">
+                <div>
+                    <button id="my_profile_submit_btn" type="submit">Update</button>
+                </div>
+                <div class="tick-btn">
+                <i id="load-tick-profile" class="fa-solid fa-spinner fa-refresh fa-xl" style="color: grey;"></i>
+                <i id="done-tick-profile" class="fa-solid fa-check fa-xl" style="color: #0ff013;"></i>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div>
+        <form id="update-security-info">
+            <div>
+                <label for='current_password'>Confirm current password to update security details:</label>
+                <input type='password' name='current_password' id='current_password' required class='write'>
+                <span class="enter"></span>
+            </div>
+
+            <div>
+                <label for="my_profile_username">Username:</label>
+                <input id="my_profile_username" name="my_profile_username" type="text" value="{{userData.username}}">
+                <p id='username-error' style='color: red; display: none;'></p>
+            </div>
+
+            <div>
+                <label for="my_profile_password">Password:</label>
+                <input id="my_profile_password" name="my_profile_password" type="password">
+            </div>
+            <div>
+                <label for="my_profile_comfirm_password">Confirm password:</label>
+                <input id="my_profile_comfirm_password" name="my_profile_comfirm_password" type="password">
+                <p id='password-format-error' style='color: red; display: none;'></p>
+                <p id='password-match-error' style='color: red; display: none;'></p>
+            </div>
+            <p id="passwordPromptMessage"></p>
+            <div class="my-profile-password-btn-div">
+            <button id="update-security-button" type="submit">Update</button>
+            <div class="tick-btn">
+            <i id="load-tick-security" class="fa-solid fa-spinner fa-refresh fa-xl" style="color: grey; display: none"></i>
+            <i id="done-tick-security" class="fa-solid fa-check fa-xl" style="color: #0ff013; display: none;"></i>
+            </div>
+            </div>
+        </form>
+        <div id="delete">
+        <form id="deleteAccount">
+            <button type="submit">Delete account</button>
+        </form>
+        </div>
+
+    </div>
+    {{else}}
+    <p style="color: red;">Profile loading error, please try again!</p>
+    <a href="/">Home</a>
+    {{/if}}
+</div>
+
+<link href="/css/myProfile.css" rel="stylesheet">
+<script src="/script/myProfile.js"></script>

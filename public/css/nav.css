@@ -1,0 +1,107 @@
+:root {
+    --user-name-size: 30px;
+    --infor-label-size: 20px;
+}
+
+/* div {
+    margin: 20px;
+} */
+
+/* #page_body {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.user-container {
+    border-radius: 30px;
+    padding: 15px;
+}
+
+.user-container ul {
+    list-style: none;
+}
+
+.user-label {
+    text-align: center;
+    margin: 0;
+    border-bottom: 1px solid grey;
+}
+
+.user-label p {
+    font-size: var(--user-name-size);
+    margin: 0;
+}
+
+.user-label img {
+    width: 150px;
+} */
+
+.nav-panel {
+    width: 100%;
+    border-bottom: 1.5px solid lightgray;
+    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 150px auto auto auto 20% auto;
+    grid-template-areas:
+    "logo . search-bar . calender . user-related";
+    align-items: center;
+}
+
+.logo{
+    grid-area: logo;
+    height: 50px;
+}
+
+#user-releted-function{
+    grid-area: user-related;
+    display: flex;
+    justify-content: end;
+}
+
+#search_bar_container{
+    grid-area: search-bar;
+    z-index: 3;
+}
+
+#calender-div{
+    grid-area: calender;
+
+}
+
+#search-calender{
+    cursor: pointer;
+}
+
+
+
+@media only screen and (max-width:1200px) {
+    .nav-panel {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        /* margin: 10px 0px 10px 0px; */
+        /* grid-template-rows: 50% 50%;
+        grid-template-columns: 150px auto auto auto;
+        grid-template-areas:
+        "logo . user-related user-related"
+        "search-bar search-bar . calender" */
+    }
+    .nav-panel > * {
+        margin: 8px 0px 8px 0px;
+    }
+
+    #calender-div {
+        position: inherit;
+    }
+    /* #user-releted-function{
+        grid-area: user-related;
+    }*/
+}
+
+
+#search-calender{
+    transform: scale(1.2);
+}

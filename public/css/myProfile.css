@@ -1,0 +1,206 @@
+#page_body {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  max-height: 100%;
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* .collapse {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+} */
+
+/* .collapse:hover {
+  color: #f2f2f2;
+  border: none;
+  border: none;
+} */
+
+.active {
+  background-color: #555;
+}
+
+#icon_container {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+#my_profile_desc {
+  width: 300px;
+  height: 100px;
+}
+
+#my_profile_container form {
+  padding: 25px;
+  width: 700px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  background-color: #f2f2f2;
+}
+
+#my_profile_container{
+  margin: 15px;
+}
+
+#my_profile_toast {
+  color: red;
+  font-size: x-large;
+  font-weight: bolder;
+}
+
+#my_profile_info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  margin-top: 40px;
+}
+
+label {
+  display: block;
+  font-size: 1.2rem;
+}
+
+input[type=text],
+input[type=password],
+select,
+#update-container input {
+  width: 100%;
+  padding: 12px 20px;
+  display: inline-block;
+  border-radius: 4px;
+  box-sizing: border-box;
+  border: 2px solid #fffefe;
+  margin: 10px 0;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#searchInput{
+  box-shadow: 0px 0px 0px;
+  padding: 0px;
+}
+
+button[type=submit] {
+  width: 15%;
+  max-height: 40px;
+  color: #404040;
+  background-color: white;
+  border: 1.5px solid #E0E0E0;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button[type=submit]:hover {
+  color: white;
+  background-color: rgb(12, 175, 17);
+  border: 1.5px solid rgb(12, 175, 17);
+}
+
+.my_profile_container {
+  /* margin: 15px; */
+  font-size: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+#my-profile-icon-image {
+  margin: 10px;
+}
+
+#update-icon-btn {
+  background-color: transparent;
+  font-size: 30px;
+  position: absolute;
+  z-index: 1;
+  color: #404040;
+  padding: 0;
+  top: 77%;
+  left: 57%;
+}
+
+#update-icon-btn:hover {
+  color:  rgb(12, 175, 17);
+
+}
+
+#icon_container {
+  display: none;
+}
+
+#icon_container label {
+  text-align: center;
+}
+
+#icon_select_container {
+  width: 100%;
+  margin: 10px;
+}
+
+.icon_select {
+  width: 100px;
+  margin: 10px;
+}
+
+.my-profile-sub-btn-div, .my-profile-password-btn-div{
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.my-profile-sub-btn-div button {
+  width: 100%;
+  margin-right: 10px;
+}
+
+.tick-btn {
+  margin-left: 10px
+}
+
+#load-tick-profile{
+  display: none;
+}
+
+#done-tick-profile{
+  display: none;
+}
+
+#delete {
+  margin-top: 15px;
+}
+
+#delete button {
+  width: 100%;
+}
+
+#deleteAccount button:hover {
+  color: #404040;
+  background-color: rgb(253, 196, 196);
+}
+
+@media only screen and (max-width:800px) {
+
+  #my_profile_container form{
+    width: 100%;
+  }
+}

@@ -1,0 +1,101 @@
+<link rel="stylesheet" href="/css/searchArticles.css">
+ 
+<div class="allArticles {{#if articlesByDate}}search-by-date{{/if}}">
+
+    <div id="search-left">
+        <div id="search-header">
+            {{#if articlesByGenre}}
+            <div class="search-word-genre">
+                <h1>Search Results for articles from {{articlesByGenre}}
+                </h1>
+            </div>
+            {{/if}}
+            {{#if articlesByDate}}
+            <div class="search-word-date">
+                <h1>Search Results for articles from <div id="search-word-date"> "{{startDate}}"</div> to <div
+                        id="search-word-date"> "{{endDate}}"</div>
+                </h1>
+            </div>
+            {{else}}
+            <h1 id = "skeetskeet">Search Results of 
+                <div id="search-word"> "{{search}}"</div>
+            </h1>
+            {{/if}}
+        </div>
+
+        <div id="search-articles">
+            {{#if articles}}
+            {{#if current_genre}}
+            {{else}}
+            <div id="articles-length">
+                <h2>Matching Articles ({{this.articlesLength}})</h2>
+            </div>
+            {{/if}}
+            {{#each articles}}
+            <div class="eachArticleDiv">
+                <div class="eachArticleDiv-container">
+                    <div class="eachArticleDiv-title">
+                        <h2>{{this.title}}</h2>
+                    </div>
+                    <div class="eachArticleDiv-time">
+                        {{this.date_of_publish}}
+                    </div>
+
+                    <div class="authorDiv">
+                        <div id="author-icon">
+                            <img src="{{this.icon_path}}" alt="author avatar">
+                        </div>
+                        <div id="author-name">
+                            <strong>
+                                <a href="/profile?id={{this.author_id}}">{{this.fname}} {{this.lname}}</a>
+                            </strong>
+                        </div>
+                    </div>
+
+                    <div id="eachArticleDiv-content">
+                        {{{this.content_html}}}
+                    </div>
+
+                    <div class="eachArticleDiv-last">
+                        <div id="readMoreDiv">
+                            <a href="/article/{{this.id}}">Read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="eachArticleDiv-img">
+                    <img src="/images/article-images/{{this.image}}" alt="article image">
+                </div>
+            </div>
+            {{/each}}
+            {{else}}
+            <p><i>There are no Articles matching "{{search}}"</i></p>
+            {{/if}}
+        </div>
+    </div>
+    {{#if current_genre}}
+    {{else}}
+    {{#if articlesByDate}}
+    {{else}}
+    <div id="search-users">
+        <div id="users-length">
+            <h2>Matching Users ({{this.usersLength}})</h2>
+        </div>
+        {{#if users}}
+        {{#each users}}
+        <div class="user">
+            <div id="userIcon">
+                <img src="{{this.icon_path}}" alt="profile avatar icon" width="70px" height="70px">
+            </div>
+            <div id="userName">
+                <a href="/profile?id={{this.id}}">{{this.fname}} {{this.lname}}</a>
+            </div>
+        </div>
+        {{/each}}
+        {{else}}
+        <p><i>There are no users matching "{{search}}"</i></p>
+        {{/if}}
+    </div>
+    {{/if}}
+    {{/if}}
+</div>
+<script type="application/javascript" src="/script/genre-script.js"></script>

@@ -1,0 +1,145 @@
+/* sub page css start*/
+#sub_container {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 4fr 1fr 4fr;
+    grid-template-areas:
+        "subscription . subscriber";
+    padding: 20px;
+}
+
+#subscription_container {
+    grid-area: subscription;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    height: auto;
+}
+
+#subscription_title>* {
+    display: flex;
+    align-self: center;
+    padding: 10px;
+}
+
+.subscription_rows {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid lightgray;
+}
+
+.subscription_rows a:hover {
+    color: rgb(113, 113, 113);
+}
+
+.subscription_icon img {
+    width: 40px;
+}
+
+.subscription_rows button {
+    height: 25px;
+    background-color: white;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+}
+
+.subscription_rows button:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.subscriber_icon img {
+    width: 40px;
+}
+
+.subscription_rows a {
+    text-decoration: none;
+    display: flex;
+    color: black;
+    gap: 10px;
+}
+
+.subscription_name {
+    display: flex;
+    align-self: center;
+    font-size: 18px;
+}
+
+#subscriber_container {
+    grid-area: subscriber;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#subscription_container>* {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+#subscriber_container>* {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+#sub_container input {
+    width: 200px;
+}
+
+#subscriber_title>* {
+    display: flex;
+    align-self: center;
+    padding: 10px;
+}
+
+.subscriber_name {
+    display: flex;
+    align-self: center;
+    font-size: 18px;
+}
+
+.subscriber_rows {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid lightgray;
+}
+
+.subscriber_rows>a {
+    display: flex;
+    text-decoration: none;
+    color: black;
+    gap: 10px;
+}
+
+.subscriber_rows>a:hover {
+    color: rgb(113, 113, 113);
+}
+
+.subscriber_rows button {
+    height: 25px;
+    background-color: white;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+}
+
+.subscriber_rows button:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+
+@media only screen and (max-width:1000px) {
+    #sub_container {
+        display: grid;
+        grid-template-rows: auto 40px auto;
+        grid-template-columns: auto;
+        grid-template-areas:
+            "subscription"
+            "." 
+            "subscriber";
+        padding: 20px;
+    }
+}
+/* sub page css end*/

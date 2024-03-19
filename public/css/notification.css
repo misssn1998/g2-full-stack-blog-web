@@ -1,0 +1,100 @@
+
+.left-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notify-content {
+  display: none;
+  border-radius: 5px;
+  border: 1px rgb(243, 143, 22);
+  position: absolute;
+  top: 45px;
+  left: -180px;
+  max-height: 400px;
+  overflow: scroll;
+  width: 400px;
+  background-color: rgb(255, 237, 219);
+  z-index: 2;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+}
+
+.notify-content .notification {
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  margin: 3px;
+  padding: 6px;
+  gap: 5px;
+  background-color: #f6f8f9; 
+  border: 1px solid #ddd; 
+  border-radius: 5px; 
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+}
+
+
+.notify-content h2 {
+  text-align: center;
+  padding-top: 10px;
+  margin: 0px;
+}
+
+.notify-content p {
+  text-align: center;
+  padding-bottom: 5px;
+  margin: 0px;
+}
+
+
+.notify-content .notification:hover {
+  display: flex;
+  background-color: #e0e0e0; 
+  cursor: pointer; 
+  box-shadow: inset 1.5px 1.5px 3px rgba(0, 0, 0, 0.2); 
+}
+
+.notify-content .read {
+  background-color: #e0e0e0;
+  cursor: pointer;
+  box-shadow: inset 1.5px 1.5px 3px rgba(0, 0, 0, 0.2); 
+}
+
+.notify-content .notification .avatar {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+}
+
+.notify-content .notification .timestamp {
+  font-size: 0.8em;
+  color: grey;
+}
+
+
+.svg-trash {
+  margin: 15px;
+  height: 16px;
+  width: 16px;
+  background-image: url("/images/svg/trash.svg");
+  background-repeat: no-repeat;
+  transform: scale(1.25);
+  order: 3;
+}
+
+.svg-trash:hover {
+  background-image: url("/images/svg/trash-fill.svg");
+}
+
+/* 
+.notify-drop:hover .notify-content {
+  display: block;
+} */
+
+
+
+
+
+

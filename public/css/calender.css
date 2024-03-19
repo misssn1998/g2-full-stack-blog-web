@@ -1,0 +1,84 @@
+body{
+	font-family: Arial;
+	font-size: 18px;
+}
+#calendar-container{
+	margin: 0 auto;
+	width: 200px;
+	border: 1px solid rgb(34, 102, 34);
+	text-align: center;
+}
+#calendar-header{
+	background-color: rgb(34, 102, 34);
+	color: #FFFFFF;
+	position: relative;
+	padding: 5px;
+}
+td{
+	text-align: center;
+	padding: 4px;
+}
+td.clickable:hover{
+	background-color: rgb(34, 102, 34);
+	color: #FFFFFF;
+	cursor: pointer;
+}
+td.today{
+	color: #FFFFFF;;
+	background-color: rgb(204, 170, 51);
+}
+table#calendar-dates{
+	table-layout: fixed;
+	width: 100%;
+	border-collapse: collapse;
+}
+th{
+	background-color: rgb(204, 170, 51);
+	color: rgb(34, 102, 34);
+	padding: 3px;
+}
+.btn{
+	color: #FFFFFF;
+	background-color: transparent;
+	border: none;
+	position: absolute;
+}
+.btn:hover{
+	color: rgb(204, 170, 51);
+	cursor: pointer;
+}
+.btn.prev-month{
+	left: 0;
+}
+.btn.next-month{
+	right:0;
+}
+.modal{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	padding-top: 50px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.4);
+}
+.modal-content{
+	background-color: #fefefe;
+	margin: auto;
+	padding: 10px;
+	border: 1px solid #888;
+	width: 250px;
+}
+.close{
+	color: rgb(34, 102, 34);
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+.close:hover,.close:focus{
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}

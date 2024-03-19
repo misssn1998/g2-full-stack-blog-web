@@ -1,0 +1,30 @@
+.comment {
+    border: 1px solid black;
+    border-radius: 20px;
+    z-index: 10;
+    background-color: greenyellow;
+    width: 500px;
+    min-height: 250px;
+    padding: 20px;
+    margin: 20px;
+    max-width: 80%; 
+    z-index: 10;
+
+}
+
+.hidden {
+    display: none;
+}
+
+.comment_details {
+    background-color: aquamarine;
+}
+
+.like-btn, #open-comment {
+    font-size: 16px;
+}
+
+.liked {
+    color: blue;
+}
+

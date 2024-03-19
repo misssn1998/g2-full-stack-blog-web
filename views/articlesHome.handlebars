@@ -1,0 +1,156 @@
+<link rel="stylesheet" href="/css/articlesHome.css">
+
+<span style="color: brown;">{{errorMessage}}</span>
+
+<div id="home_container">
+
+    <div>
+        {{#if user}}
+        <input value="{{user.id}}" name="user_id" id="current_user_id" hidden>
+        {{!-- <div id="greetingDiv">
+            <div>Welcome to your homepage, <span>{{user.fname}}!</span></div>
+        </div> --}}
+        {{/if}}
+    </div>
+
+    <div>
+        <h2 id="category_nav">
+            {{#if current_category}}
+            <div id="specific_category_title">
+                <span id="all_articles_category"><a href="/">All Articles</a></span> / <span
+                    id="current_category">{{current_category}}</span>
+            </div>
+            {{else}}
+            <div id="home_title">
+                {{!-- <h3>Explore All Articles</h3> --}}
+            </div>
+            {{/if}}
+        </h2>
+    </div>
+
+    <div id="top5_articles">
+        <h1 id="top5_block_title">Top 5 Popular Articles</h1>
+        <div id="top5_articles_container">
+            {{#each top5Articles}}
+            <div class="each-top5Articles"
+                style="background-image: url('/images/article-images/thumbnails/{{this.image}}'); background-size: cover; background-position: center center; background-repeat: no-repeat;">
+                {{!-- <div id="top5_background_image">
+
+                </div> --}}
+                {{!-- <div><img src="/images/article-images/thumbnails/{{this.image}}" alt="{{this.image}}">
+                </div> --}}
+                <div class="each-top5content">
+                    <div id="top5_article_title">
+                        <h2>{{this.title}}</h2>
+                    </div>
+                    {{!-- <div id="article_description">{{{this.content_html}}}</div> --}}
+                    {{!-- No category data? --}}
+                    {{!-- <div id="article_category">{{this.article_category}}</div> --}}
+                    <button type="button" class="btn_readmore">
+                        <a href="/article/{{this.id}}" id="top5readMoreLink">Read more</a>
+                    </button>
+                </div>
+            </div>
+            {{/each}}
+            {{!-- <button class="scroll-button" id="scrollButton">▼</button> --}}
+        </div>
+    </div>
+    <hr>
+    <h1 id="main_block_title">Explore More Articles</h1>
+    <div id="explore-more">
+        <div id="genre-container">
+            <div id="genre-list">
+                <div>
+                    <a href="/genre/Travelogues">Travelogues</a>
+                </div>
+                <div>
+                    <a href="/genre/Opinion%20Pieces">Opinion</a>
+                </div>
+                <div>
+                    <a href="/genre/Technology%20Trends">Tech Trends</a>
+                </div>
+                <div>
+                    <a href="/genre/Feature%20Stories">Feature Stories</a>
+                </div>
+                <div>
+                    <a href="/genre/News%20Articles">News</a>
+                </div>
+                <div>
+                    <a href="/genre/Historical%20Analysis">Historical Analysis</a>
+                </div>
+                <div>
+                    <a href="/genre/Entertainment%20and%20Pop%20Culture">Entertainment</a>
+                </div>
+                <div>
+                    <a href="/genre/Health%20and%20Wellness%20Articles">Health and Wellness</a>
+                </div>
+                <div>
+                    <a href="/genre/Product%20Reviews">Reviews</a>
+                </div>
+                <div>
+                    <a href="/genre/How-to%20Guides">Guides</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="all_articles">
+            {{#each articleData}}
+            <div id="each-articleData">
+                <div class="each-article-content">
+                    <div id="article_title">
+                        <h2>{{this.title}}</h2>
+                    </div>
+                    <div id="article_description">{{{this.content_html}}}</div>
+                    {{!-- No category information yet --}}
+                    {{!-- <div id="article_category">{{this.article_category}}</div> --}}
+
+                    <div class="article_info">
+                        <div class="btn_sub_option">
+                            {{!-- {{#isEqual user.id this.author_id}} --}}
+                            <a href="/profile?id={{this.author_id}}" id="authorData">
+                                <div id="author_icon"><img src="{{this.icon_path}}"></div>
+                                <div id="author_name">{{this.fname}} {{this.lname}}</div>
+                            </a>
+                            {{!-- {{else}}
+                            <a href="/my_profile" id="authorData">
+                                <div id="author_icon"><img src="{{this.icon_path}}"></div>
+                                <div id="author_name">{{this.fname}} {{this.lname}}</div>
+                            </a>
+                            {{/isEqual}} --}}
+                            <div class="btn_subscribe">
+                                <input value="{{this.author_id}}" name="author_id" class="article_author_id" hidden>
+                            </div>
+
+                        </div>
+                        <button type="button" class="btn_readmore">
+                            <a href="/article/{{this.id}}" id="article-readMoreLink">Read more</a>
+                        </button>
+
+                        <div class="article_timestamp">
+                            {{this.date_of_publish}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="eachArticle-img">
+                    <img src="/images/article-images/{{this.image}}" alt="article image">
+                </div>
+            </div>
+            {{/each}}
+
+
+            {{!-- <div id="sidebar">
+                <div id="sidebar_title">More to explore</div>
+                <div id="sidebar_category_container">
+                    {{#each categoryData}}
+                    <div class="categoryData">
+                        {{this.category}}
+                    </div>
+                    {{/each}}
+                </div>
+            </div> --}}
+
+        </div>
+    </div>
+</div>
+<script src="/script/articlesHome.js"></script>

@@ -1,0 +1,96 @@
+/* original source: https://codepen.io/mdchad/pen/qqmJex 
+has been modified to cater to app*/
+
+body {
+  text-align:center;
+  font-family: 'helvetica neue';
+}
+
+input[type="date"] {
+  color: #cecece;
+}
+
+#password-eye {
+  opacity: 0.3;
+}
+
+#confirm-password-eye {
+  opacity: 0.3;
+}
+
+.input-container{
+  position:relative;
+  margin: 30px;
+  margin-left: -50px;
+  margin-right: -50px;
+}
+
+.label{
+  position:absolute;
+  left: 25%;
+  top: 22px;
+  font-size: 18px;
+  font-weight: 200;
+  color: #cecece;
+  transition: all 0.5s ease;
+  pointer-events: none;
+  font-size: 16px;
+}
+
+.focused-label {
+  position:absolute;
+  left: 25%;
+  display:block;
+  color: black;
+  top: -5px;
+  font-size: 13px;
+}
+
+input:focus~.label {
+  display:block;
+  color: black;
+  top: -5px;
+  font-size: 13px;
+}
+
+input:focus~.enter {
+  background-color: black;
+  position: absolute;
+  content: ' ';
+  height: 1px;
+  right: 45%;
+  top: 52px;
+  transform: scaleX(5)
+}
+
+.enter{
+  transition: all ease 0.5s;
+  width: 10.1%;
+  transform: scaleX(1);
+}
+
+textarea, input { 
+  outline: none;
+  border: 0;
+  border-bottom: 1px solid #cecece;
+  height: 40px;
+  width: 50%;
+  font-size: 17px;
+}
+
+.icon {
+  position: absolute;
+  right: 25%;
+  top: -12.5px;
+  cursor: pointer;
+  width: 20px;
+  transform: translateY(80%);
+}
+
+input:focus::before{
+  content: 'DOB:  ';
+}
+
+.hidden-label {
+  display: none;
+}

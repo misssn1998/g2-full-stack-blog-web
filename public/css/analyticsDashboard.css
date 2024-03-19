@@ -1,0 +1,207 @@
+/* ANAYTICS DASHBOARD START*/
+#container1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.analyticsContainer{
+    /* background-color: rgb(236, 255, 252); */
+    margin: 0;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #f2f2f2;
+    width: 1200px;
+}
+
+.data {
+    margin-bottom: 15px;
+}
+/* .analyticsContainer div {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;;
+} */
+
+.analyticsDashboard {
+    margin: 20px;
+    padding: auto;
+    margin-bottom: 20px;
+
+}
+
+#keyMetricsTitleDiv{
+    margin: 20px;
+}
+
+#keyMetricsTitle {
+    margin-left: 50px;
+    font-size: 45px;
+ 
+}
+
+.keyMetricsDiv {
+    display: flex;
+    border: none;
+    align-items: center;
+    /* margin: 20px; */
+}
+
+.keyMetricsDiv>* {
+    /* margin: auto;
+    padding: auto; */
+    text-align: center;
+}
+
+#keyMetricsTitle {
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.indvKeyMetrics {
+    padding: 20px;
+    margin: 20px;
+    border: 3px solid white;
+    border-radius: 10px;
+    height: 100%;
+}
+
+.divTitles {
+    font-size: 20px;
+}
+
+#followersDiv {
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: black;
+    color: white;
+}
+
+#followerNumber {
+    font-size: 45px;
+    margin-bottom: 0;
+    margin-top: 15px;
+}
+
+#commentsDiv,
+#likesDiv {
+    background-color: white;
+}
+
+.articleWithComments, #topTitles {
+    font-style: italic;
+}
+
+.topThreeDiv,
+#commentsDiv,
+#likesDiv, .furtherData {
+    /* background-color: rgb(255, 255, 255); */
+}
+
+.topThreeDiv {
+    padding: auto;
+    padding-bottom: 20px;
+    margin: 20px;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+/* .topThreeDiv>* {
+    margin: auto;
+    padding: auto;
+    text-align: center;
+} */
+
+#top3Container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+
+#top3Container > * {
+    margin-left: 15px;
+}
+
+#top3Container i {
+    font-size: 35px;
+}
+
+/* #topThreeTitle {
+    margin: 20px;
+    margin-top: 0;
+    font-size: 30px;
+    text-decoration: underline;
+} */
+
+.indvTopArticles {
+    display: flex; 
+    justify-content: center;
+}
+
+.eachTopArticle{
+    margin: 40px;
+    margin-left: 160px;
+    padding: 30px;
+    float: left;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 10px;
+}
+
+.topArticlesIcons{
+    margin: 10px;
+}
+
+.topArticleSummaries{
+    text-align: left;
+    margin: 15px;
+    /* border: 1px solid red; */
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.furtherData {
+    background-color: white;
+    margin: 35px;
+}
+
+#dataIcon {
+    margin: 10px;
+}
+
+.furtherData{
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+#plot {
+    margin: auto;
+    padding: 20px;
+}
+
+/* ANAYTICS DASHBOARD END*/
+
+@media screen and (max-width: 900px) {
+    .analyticsContainer {
+        width: 600px;
+    }
+}
+
+@media  screen and (max-width: 400px) {
+    .analyticsContainer {
+        width: 400px;
+    }
+
+    .keyMetricsDiv {
+        flex-direction: column;
+       
+    }
+
+    .indvTopArticles {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+}

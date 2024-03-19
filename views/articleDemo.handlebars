@@ -1,0 +1,196 @@
+<link rel="stylesheet" href="/css/articleDemo.css">
+
+<div id="specific_category_title">
+    <span id="articles_home">
+        <i class="fa-solid fa-arrow-left"></i>
+        <a href="/">Back to Home</a>
+    </span>
+    /
+    <span id="current_category">
+        <a href="/genre/{{article.[0].genre}}">
+            {{article.[0].genre}}
+        </a>
+    </span>
+</div>
+
+<div id="container">
+    <div id="article_container">
+        {{!-- Displaying article content --}}
+        <div id="article_title">
+            <h1>{{article.[0].title}}</h1>
+        </div>
+
+        <div id="author_details">
+            <div id="author_details_left">
+                <div id="author_icon">
+                    <img src="{{authorName.[0].icon_path}}" alt="author avatar">
+                </div>
+                <div id="author-name">
+                    <div>
+                        <p id="author_name">
+                            <a href="/profile?id={{authorName.[0].id}}">{{authorName.[0].author_fname}}
+                                {{authorName.[0].author_lname}}</a>
+                        </p>
+                    </div>
+                    <div>
+                        <p id="article_timestamp">{{article.[0].date_of_publish}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="article-img">
+        <img src="/images/article-images/thumbnails/{{article.[0].image}}" alt="{{article.[0].image}}">
+    </div>
+
+
+    <div id="article_content">
+        {{{article.[0].content_html}}}
+    </div>
+
+    {{!-- button --}}
+    <div id="like_section">
+        <input value="{{user.id}}" id="user_id" hidden>
+        <input value="{{article.[0].id}}" id="article_id" hidden>
+
+
+        <button class="like-btn">
+            <i class="fa-thumbs-up" id="like-icon"></i>
+            {{like_count}}
+        </button>
+
+        <button id="comment-btn">
+            <i class="fa-regular fa-comment-dots"></i>
+        </button>
+    </div>
+
+    <div class="comment-container" style="display: block;">
+        <hr>
+        <div>
+            <form id="comment_on_article_form">
+                <textarea name="comment_content" placeholder="comment on this article!" required></textarea>
+                <button id="commentOnArticleButton" type="submit">Submit</button>
+            </form>
+        </div>
+        <input id="user_id_temp_storage" name="user_id_temp_storage" value="{{user_id}}" hidden>
+        <input id="article_id_temp_storage" name="article_id_temp_storage" value="{{article.[0].id}}" hidden>
+        <input id="author_id_temp_storage" name="author_id_temp_storage" value="{{article.[0].author_id}}" hidden>
+
+        <div class="comments-div">
+            {{#if comments}}
+            {{#each comments}}
+            <div class="first-level-div">
+                <div class="users-comment">
+                    <div class="comment-info">
+                        <div class="avatar-div">
+                            <img src="{{this.icon_path}}" alt="user avatar" class="avatar">
+                        </div>
+                        <div class="avatar-right">
+                            <p class="comment-name">{{this.fname}} {{this.lname}}</p>
+                            <p class="comment-time">{{this.time_of_comment}}</p>
+                        </div>
+                    </div>
+                    <div class="comment-content">
+                        <p>{{this.content}}</p>
+                    </div>
+                    <div class="reply-btn">
+                        <button class="textareaOpener-1">Reply</button>
+                    </div>
+                </div>
+                <div class="reply-container">
+                    <form class="comment_on_comment_form">
+                        <input name="comment_id_storage" value="{{this.id}}" hidden>
+                        <textarea name="comment_content" placeholder="Leave your comments here" required></textarea>
+
+                        <div class="reply-btn">
+                            <button class="commentSubmitButton" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <!-- these three element in the div must next to each other, if anyone modify CSS, should keep this in mind -->
+                    <input name="comment_id_temp_storage" value="{{this.id}}" hidden>
+                    <button class="deleteCommentButton">Delete</button>
+                    <input name="commenter_id_temp_storage" value="{{this.user_id}}" hidden>
+                </div>
+                {{#if this.second_level_comments}}
+                {{#each this.second_level_comments}}
+                <div class="second-level">
+                    <div class="users-comment-2">
+                        <div class="comment-info">
+                            <div class="avatar-div">
+                                <img src="{{this.icon_path}}" alt="user avatar" class="avatar">
+                            </div>
+                            <div class="avatar-right">
+                                <p class="comment-name">{{this.fname}} {{this.lname}}</p>
+                                <p class="comment-time">{{this.time_of_comment}}</p>
+                            </div>
+                        </div>
+                        <div class="comment-content">
+                            <p>{{this.content}}</p>
+                        </div>
+                    </div>
+
+                    <div class="reply-btn">
+                        <button class="textareaOpener-2">Reply</button>
+                    </div>
+                    <div>
+                        <!-- these three element in the div must next to each other, if anyone modify CSS, should keep this in mind -->
+                        <input name="comment_id_temp_storage" value="{{this.id}}" hidden>
+                        <button class="deleteCommentButton">Delete</button>
+                        <input name="commenter_id_temp_storage" value="{{this.user_id}}" hidden>
+                    </div>
+
+
+                    <div class="second-level-form">
+                        <form class="comment_on_comment_form">
+                            <input name="comment_id_storage" value="{{this.id}}" hidden>
+                            <textarea name="comment_content" placeholder="leave your comments here" required></textarea>
+                            <button class="commentSubmitButton" type="submit">Submit</button>
+                        </form>
+                    </div>
+                    {{#if this.third_level_comments}}
+                    {{#each this.third_level_comments}}
+                    <div class="third-level">
+                        <div class="users-comment-2">
+                            <div class="comment-info">
+                                <div class="avatar-div">
+                                    <img src="{{this.icon_path}}" alt="user avatar" class="avatar">
+                                </div>
+                                <div class="avatar-right">
+                                    <p class="comment-name">{{this.fname}} {{this.lname}}</p>
+                                    <p class="comment-time">{{this.time_of_comment}}</p>
+                                </div>
+                            </div>
+                            <div class="comment-content">
+                                <p>{{this.content}}</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <!-- these three element in the div must next to each other, if anyone modify CSS, should keep this in mind -->
+                            <input name="comment_id_temp_storage" value="{{this.id}}" hidden>
+                            <button class="deleteCommentButton">Delete</button>
+                            <input name="commenter_id_temp_storage" value="{{this.user_id}}" hidden>
+                        </div>
+                    </div>
+                    {{/each}}
+                    {{/if}}
+                </div>
+                {{/each}}
+                {{/if}}
+            </div>
+            {{/each}}
+            {{else}}
+            <p id="noCommentP">This article has no comments</p>
+            {{/if}}
+        </div>
+    </div>
+</div>
+</div>
+
+{{!-- JS linked to button effects --}}
+<script src="/script/button.js"></script>
+<script src="/script/comment.js"></script>
+<script src="/script/reply.js"></script>

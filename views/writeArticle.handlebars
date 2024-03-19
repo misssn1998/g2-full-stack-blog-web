@@ -1,0 +1,52 @@
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
+<p style="color: brown;"><strong id="write-article-toast-message"></strong></p>
+
+<!-- Create the editor container -->
+<div id="form-container" class="container">
+    <form id="write_article_form" enctype="multipart/form-data">
+        <div id="form-div">
+                <div>
+                    <label for="write_article_title">Title</label>
+                    <input id="write_article_title" name="write_article_title" type="text" placeholder="Your title..." required>
+                </div>
+                <div>
+                    <label for="write_article_genre">Genre</label>
+                    <select name="write_article_genre" id="write_article_genre">
+                        <option value="none" selected disabled hidden>Select an genre</option>
+                        <option value="News Articles">News Articles</option>
+                        <option value="Opinion Pieces">Opinion Pieces</option>
+                        <option value="Feature Stories">Feature Stories</option>
+                        <option value="How-to Guides">How-to Guides</option>
+                        <option value="Product Reviews">Product Reviews</option>
+                        <option value="Travelogues">Travelogues</option>
+                        <option value="Health and Wellness Articles">Health and Wellness Articles</option>
+                        <option value="Technology Trends">Technology Trends</option>
+                        <option value="Entertainment and Pop Culture">Entertainment and Pop Culture</option>
+                        <option value="Historical Analysis">Historical Analysis</option>
+                    </select>
+                </div>
+                <div id="img-form-div">
+                    <label for="write_article_image">Attach Image</label>
+                    <input id="write_article_image" name="write_article_iamge" type="file" accept=".png,.jpg,.jpeg,.bmp,.gif">
+                </div>
+        </div>
+        <div id="write-label">
+            <label for="write_article_content">Content:</label>
+            <input name="write_article_content" type="hidden">
+        </div>
+        <div id="write_article_content" style="height: 300px">
+        </div>
+        <div id="publish_article_btn">
+            <button type="submit">Publish!</button>
+        </div>
+    </form>
+</div>
+
+
+<!-- Include the Quill library -->
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+<script src="/script/writeArticle.js"></script>
+
+<link rel="stylesheet" href="/css/writeArticle.css">

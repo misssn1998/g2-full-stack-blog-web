@@ -1,0 +1,50 @@
+<div id="sub_container">
+
+    <div id="subscription_container">
+        {{#if subscriptionList}}
+        <div id="subscription_title">
+            <div id="subscription_number">{{subscriptionList.length}} Subscriptions</div>
+            <div id="search_subscription">
+                {{!-- <input type="text" id="searchSubscription" placeholder="Search subscriptions"> --}}
+            </div>
+        </div>
+        {{#each subscriptionList}}
+        <div class="subscription_rows">
+            <a href="/profile?id={{this.id}}">
+                <span class="subscription_icon"><img src="{{this.icon_path}}"></span>
+                <span class="subscription_name">{{this.fname}} {{this.lname}}</span>
+            </a>
+            <button type="button" name="btn_unsubscription" class="btn_unsubscription">Remove<input value="{{this.id}}" class="subscription_id" hidden></button>
+        </div>
+        {{/each}}
+        {{else}}
+        <div id="subscription_number">0 Subscription</div>
+        {{/if}}
+    </div>
+
+    <div id="subscriber_container">
+        {{#if subscriberList}}
+        <div id="subscriber_title">
+            <div id="subscriber_number">{{subscriberList.length}} Subscribers</div>
+            <div id="search_subscriber">
+                {{!-- <input type="text" id="searchSubscriber" placeholder="Search subscribers"> --}}
+            </div>
+        </div>
+        {{#each subscriberList}}
+        <div class="subscriber_rows" method="post">
+            <a href="/profile?id={{this.id}}">
+                <span class="subscriber_icon"><img src="{{this.icon_path}}"></span>
+                <span class="subscriber_name">{{this.fname}} {{this.lname}}</span>
+            </a>
+
+            <button type="button" name="btn_unsubscriber" class="btn_unsubscriber">Remove<input value="{{this.id}}" class="subscriber_id" hidden></button>
+        </div>
+        {{/each}}
+
+        {{else}}
+        <div id="subscription_number">0 Subscriber</div>
+        {{/if}}
+    </div>
+</div>
+
+<script src="/script/sub.js"></script>
