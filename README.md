@@ -15,6 +15,24 @@ This project aims to develop a blogging website with the following features:
 5. Users have full control over their own personal information includes username and password.
 6. Analytics statistic with user created content
 
+<h3>Technologies used</h3>
+<ul>
+    <li>Express.js: Web framework for handling HTTP requests and middleware functions.</li>
+    <li>Handlebars: Templating engine for server-side rendering.</li>
+    <li>SQLite: Lightweight database solution for data storage.</li>
+    <li>DAOs (Data Access Objects): Manage database interactions and perform CRUD operations.</li>
+    <li>SQL: Utilized for database schema initialization and queries.</li>
+    <li>AJAX Requests: Facilitate asynchronous communication between frontend and backend.</li>
+    <li>Cookies: Essential for authentication token storage and session verification.</li>
+    <li>Bcrypt: Password hashing and salting for enhanced security.</li>
+    <li>Multer: Handles file upload management.</li>
+    <li>JSON: Our standard data format for information exchange.</li>
+    <li>JavaScript: Used for UI logic, event handling, and AJAX requests.</li>
+    <li>CSS Animations: Enhance user experience and interactivity.</li>
+    <li>CSS Flex and Grids: Layout management in page views.</li
+</ul>
+
+
 <h3>Git Clone</h3>
 
 Copy the respository URL and open the terminal in VScode:
