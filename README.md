@@ -74,14 +74,7 @@ To run the program, run the following in the terminal after npm sucessfully inst
     user9     123
     user10    123
 
-<h3>Team Members</h3>
 
-    Tuocheng (Tony) Li
-    Alden Maiyor
-    Sienna Nguyen
-    Yue (Carina) Qi
-    Tone Xie
-    Inez Chong
 
 
     
